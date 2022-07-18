@@ -58,6 +58,7 @@ a.nav-item:hover {
 }
 
 .linkedin {
+	max-width:100%;
 	display: flex;
 	justify-content: center;
 }
