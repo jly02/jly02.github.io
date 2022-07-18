@@ -71,6 +71,7 @@ a.nav-item:hover {
 
 .project-text {
 	text-align: justify;
+	justify-content: center;
 }
 
 .box {
