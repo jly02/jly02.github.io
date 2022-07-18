@@ -88,6 +88,12 @@ a.nav-item:hover {
 	background-color: transparent; 
 }
 
+.social-linkedin {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
 	.nav-menu {
 		background-color: #063647;
