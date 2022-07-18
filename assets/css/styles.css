@@ -55,14 +55,10 @@ a.nav-item:hover {
 	max-width:100%;
 	max-height:175px;
 	margin-bottom:15px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
-.container {
+.linkedin {
 	display: flex;
-	align-items: center;
 	justify-content: center;
 }
 
@@ -95,12 +91,6 @@ a.nav-item:hover {
 
 .void-background {
 	background-color: transparent; 
-}
-
-.social-linkedin {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
