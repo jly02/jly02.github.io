@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jonathan Ly | ngrams</title>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+	<!-- Source: https://www.artstation.com/artwork/LWDKl -->
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+	<meta name="author" content="Jonathan Ly">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="nav container void-background">
+			<!-- This "nav-menu" is hidden on mobile -->
+			<!-- Add the modifier "is-active" to display it on mobile -->
+			<div class="nav-left">
+				<a href="http://github.com/jly02" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-github"></i>
+					</span>
+				</a>			
+				<a href="https://twitter.com/pandaly02" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-twitter"></i>
+					</span>
+				</a>	
+			</div>
+
+			<div class="nav-right nav-menu">
+                <a class="nav-item" href="index.html">Home</a>
+				<a class="nav-item" href="about.html">About</a>
+				<a class="nav-item" href="#projects">Projects</a>
+				<a class="nav-item" href="#social">Social</a>
+			</div>
+
+			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+			<span class="nav-toggle">
+                <span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</nav>
+		
+		<!-- Projects -->
+		<section  id="projects" class="section section-2">
+			<div class="container">
+				<div class="has-text-centered">
+					<h3 class="title is-3">ngrams</h3>
+				</div>
+				
+				<div class="columns is-multiline is-desktop">
+                    <div class="project-desc">
+                        <a href="https://github.com/jly02/ngram">Link to GitHub repository.</a>
+                        <p>
+                            Before the advent of machine learning and neural networks, one common method for generating test in any language was with n-grams: an incredibly simple statistical way to predicting the next word to come in a sequence given a large body of text to be trained on.
+                        </p>
+
+                        <br>
+                        <img src="assets/img/ngrams.png">
+                        <br>
+                        
+                        <p>
+                            An n-gram is a just a bag of <i>n</i> words. For example, a bigram is a set of two words, like "is it" or "I am". My implementation uses trigrams, trained on the <a href="https://anc.org/data/oanc/">Open American National Corpus (OANC)</a>. To split a sentence into trigrams, you would iterate word by word, and grab the next two words with it. To demonstrate, "Today I am going outside" is split into three trigrams: "Today I am", "I am going", and "am going outside."
+                        </p>
+                        <br>
+                        <p>
+                            After that is done, we can predict words or generate sentences using somewhat random system. In order to guess, a word must be given a probability, defined with this expression:
+                        </p>
+                        <img src="assets/img/pword.gif">
+                        <p>
+                            Where w(n) is the word to be guessed, and w(prev) is, in my case, the previous two words, called the "context." Basically, the probability of seeing a certain word in given context is the number of times it shows up in that context, divided by the total number of times the context appeared. To make this more concrete, here is an example:
+                        </p>
+                        <img src="assets/img/pandthey.gif">
+                        <p>
+                            Once the possible words have been assigned a probability, you can use your choice of randomization methods to pick the next word. Continuing off of the previous example, let's say "and they" showed up 60 times, and the possible words to follow were "played", "sang", and "swam" with frequencies of 32, 16, and 12, respectively. The probability of seeing "and they played" would therefore be 32/60, or around 53%.
+                        </p>
+                        <br>
+
+                        <br>
+                        <p>
+                            Of course, such a primitive "understanding" of language does not come without some obvious issues. Once again, using the previous example, suppose you had the sentence "they went down to the water and they ..." As humans, we might think that "swam" is the most likely to be the next word, but the model does not care about any of the context before the last two words, making "sang" more likely to be guessed than "swam."
+                        </p>
+                        <p>
+                            Apart from that, the issue of sparsity also shows up. At a high level, sparsity refers to a lack of data in the model. Despite the large 15 million word OANC, there are still many phrases that do not exist within the dataset. The larger n-gram you go, the more of an issue sparsity becomes.
+                        </p>
+                        <br>
+
+                        
+
+                        <h2 style="font-weight: bold;">
+                            A Few Examples
+                        </h2>
+                        <img src="assets/img/ngrams-samp-1.png">
+                        <img src="assets/img/ngrams-samp-2.png">
+                        <img src="assets/img/ngrams-samp-3.png">
+                        <br>
+                        <a href="https://github.com/jly02/ngram/blob/main/README.md">Generate your own linguistic nonsense.</a>
+                        <br>
+
+                        <br><br>
+                        <h2 style="font-weight: bold;">
+                            Notes and Technicalities
+                        </h2>
+                        <p>My implementation isn't entirely "correct" - there are a few details I left off, such as <START> and <END> tags for the beginning and end of files, which is the reason the gen_sentence() method requires two words as a seed.</p>
+                        <p>I don't do any modification to the data, so results may be even more incoherent than expected due to random symbols or characters being out of place (such as a stray quotation mark or parentheses).</p>
+                        <p>I chose to implement this using C++, as I believed Python to be too slow, but my inexperience in C++ could outweigh the benefits of choosing it over Python.</p>
+                    </div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Footer -->
+		<section class="section-4 has-text-centered container">
+			<a href="https://www.linkedin.com/in/jly02/">Contact Me</a>
+		</section>
+		
+		<!-- Scripts  -->
+		<script src="controller.js"></script>		
+	</body>	
+</html>
