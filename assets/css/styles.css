@@ -1,5 +1,9 @@
+/* https://github.com/lonekorean/gist-syntax-themes */
+@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/848d6580/stylesheets/monokai.css');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 html, body{
-	font-size:16px;
+	font-size: 16px;
 	color: #dfdfdf;
 	background-color: #063647; 
 }
@@ -70,6 +74,10 @@ a.nav-item:hover {
 }
 
 .project-text {
+	text-align: justify;
+}
+
+.project-desc {
 	text-align: justify;
 }
 

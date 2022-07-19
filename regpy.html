@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jonathan Ly | regpy</title>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+	<!-- Source: https://www.artstation.com/artwork/LWDKl -->
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+	<meta name="author" content="Jonathan Ly">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="nav container void-background">
+			<!-- This "nav-menu" is hidden on mobile -->
+			<!-- Add the modifier "is-active" to display it on mobile -->
+			<div class="nav-left">
+				<a href="http://github.com/jly02" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-github"></i>
+					</span>
+				</a>			
+				<a href="https://twitter.com/pandaly02" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-twitter"></i>
+					</span>
+				</a>	
+			</div>
+
+			<div class="nav-right nav-menu">
+				<a class="nav-item" href="#about">About</a>
+				<a class="nav-item" href="#projects">Projects</a>
+				<a class="nav-item" href="#social">Social</a>
+			</div>
+
+			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+			<span class="nav-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</nav>
+		
+		<!-- Projects -->
+		<section  id="projects" class="section section-2">
+			<div class="container">
+				<div class="has-text-centered">
+					<h3 class="title is-3">regpy</h3>
+				</div>
+				
+				<div class="columns is-multiline is-desktop">
+                    <div class="project-desc">
+                        <a href="https://github.com/jly02/regpy">Link to GitHub repository.</a>
+                        <p>
+                            regpy is a library meant to make the prototyping process for fitting regression data as painless as possible. You can plot any regression line in as little as four lines of Python.
+                        </p>
+                        <br>
+                        <script src="https://gist.github.com/jly02/b08a3d85d7bd5dba21227ecdd6362031.js"></script>
+
+                        <br>
+                        <p>
+                            This will plot this graph (regpy uses matplotlib in the background):
+                        </p>
+                        <img src="assets/img/regpy-proj-1.png"><br>
+
+                        <br>
+                        <p>
+                            The minimal effort of using this library means it is a perfect choice for rapid development over small datasets, or even for use in educational settings. Plotting multiple graphs is also possible, and neat formatting is handled entirely for you. The following script:
+                        </p>
+                        <br>
+                        <script src="https://gist.github.com/jly02/89da4be3e8f705dcb7316b87d4f75f07.js"></script>
+                        <br>
+                        <p>
+                            May produce the following graphs:
+                        </p>
+                        <img src="assets/img/regpy-proj-2.png"><br>
+
+                        <br>
+                        <p>
+                            Lorem ipsum dolor etc etc etc fill this in with the "to be implemented" stuff WIP blah blah
+                        </p>
+
+                        <a href="https://github.com/jly02/regpy/blob/main/README.md">Read the docs.</a>
+                    </div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Footer -->
+		<section class="section-4 has-text-centered container">
+			<a href="https://www.linkedin.com/in/jly02/">Contact Me</a>
+		</section>
+		
+		<!-- Scripts  -->
+		<script src="controller.js"></script>		
+	</body>	
+</html>
