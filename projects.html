@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>About Me</title>
+	<title>Jonathan Ly | Projects</title>
 	<!-- css files -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="nav-right nav-menu">
-                <a class="nav-item" href="index.html">Home</a>
+				<a class="nav-item" href="index.html">Home</a>
 				<a class="nav-item" href="about.html">About</a>
 				<a class="nav-item" href="projects.html">Projects</a>
 				<a class="nav-item" href="#social">Social</a>
@@ -40,41 +40,60 @@
 			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
 			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
 			<span class="nav-toggle">
-                <span></span>
+				<span></span>
 				<span></span>
 				<span></span>
 				<span></span>
 			</span>
 		</nav>
-				
-		<!-- About Me -->
-		<section id="about" class="section section-1">
-			<div class="container has-text-centered">
-				<!-- Source: https://i.natgeofe.com/k/75ac774d-e6c7-44fa-b787-d0e20742f797/giant-panda-eating_square.jpg -->
-				<img class="avatar" src="assets/img/profile.png">
+		
+		<!-- Projects -->
+		<div class="container">
+			<div class="has-text-centered">
+				<h3 class="title is-3">Projects</h3>
 			</div>
-			<div class="container"></br>
-				<h3 class="intro" style="font-weight: bold;">
-					Jonathan Ly
-				</h3>
-				<p class="intro">
-					Hi! I'm Jonathan, a current student at the University of Washington, studying computer science and some applied mathematics. After acquiring my Bachelor's degree, I plan to pursue a Master's, also in computer science. I am a motivated student who is interested in the broad applications of computing in backend software, physics simulations, and computer graphics.
-				</p>
-                <br>
-                <p class="intro">If you would like to talk, please contact me via LinkedIn.</p>
-			</div>
-		</section>
-
-		<!-- Social -->
-		<section id="social" class="section section-3">
-			<div class="container">
-				<div class="social-container columns">
-					<div class="linkedin">
-						<a target="_blank" href="https://www.linkedin.com/in/jly02/"><img class="" src="assets/img/linkedin.png"></a>
-					</div>
+			
+			<div class="columns is-multiline is-desktop">
+				<!-- Project 1 -->
+				<div class="box project-text">
+					<article>
+						<div>
+							<figure class="image project-figure">
+								<img src="assets/img/regpy.png" alt="4 graphs next to code">
+							</figure>
+						</div>
+						<div>
+							<h2 class="project-titles">
+								regpy
+							</h2>
+							<p>
+								Creating and plotting regression models in Python made as quick and easy as possible.
+							</p>
+							<a href="regpy.html">Read more.</a>
+						</div>
+					</article>
+				</div>
+				<!-- Project 2 -->
+				<div class="box project-text">
+					<article>
+						<div>
+							<figure class="image project-figure">
+								<img src="assets/img/ngrams.png" alt="A randomly generated sentence based on a prompt">
+							</figure>
+						</div>
+						<div>	
+							<h2 class="project-titles">
+								N-gram-based Sentence Generation
+							</h2>		
+							<p>
+								Before deep learning, n-gram models were the common statistical method for generating surprisingly grammatical nonsense.
+							</p>
+						</div>
+						<a href="ngrams.html">Read more.</a>
+					</article>
 				</div>
 			</div>
-		</section>	
+		</div>
 		
 		<!-- Footer -->
 		<section class="section-4 has-text-centered container">
