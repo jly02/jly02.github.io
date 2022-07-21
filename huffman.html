@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jonathan Ly | Huffman</title>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+	<!-- Source: https://www.artstation.com/artwork/LWDKl -->
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+	<meta name="author" content="Jonathan Ly">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="nav container void-background">
+			<!-- This "nav-menu" is hidden on mobile -->
+			<!-- Add the modifier "is-active" to display it on mobile -->
+			<div class="nav-left">
+				<a href="http://github.com/jly02" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-github"></i>
+					</span>
+				</a>			
+				<a href="https://twitter.com/pandaly02" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-twitter"></i>
+					</span>
+				</a>	
+			</div>
+
+			<div class="nav-right nav-menu">
+				<a class="nav-item" href="index.html">Home</a>
+				<a class="nav-item" href="about.html">About</a>
+				<a class="nav-item" href="projects.html">Projects</a>
+				<a class="nav-item" href="social.html">Social</a>
+			</div>
+
+			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+			<span class="nav-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</nav>
+		
+		<!-- Projects -->
+		<section  id="projects" class="section section-2">
+			<div class="container">
+				<div class="has-text-centered">
+					<h3 class="title is-3">Huffman Compression</h3>
+				</div>
+				
+				<div class="columns is-multiline is-desktop">
+                    <div class="project-desc">
+                        <p style="color: orange;">Git repository unavailable.</p>
+                        <p>
+                            I normally wouldn't talk about any course projects but this was a small one and I thought it was pretty cool.
+                        </p>
+                        <br>
+                        <p>
+                            Students who have taken an introductory programming class have probably heard of or been asked to implement Huffman codes for file compression. This is for good reason: it allows a student to define their own implementation for a simple binary tree data structure (for <i>n</i>-ary implementations of Huffman encodings), and potentially makes use of some clever recursion. There are plenty of resources online but I aim to just provide a simple and concise explanation.
+                        </p>
+
+                        <br>
+                        <br>
+                        <h2 style="font-weight: bold;">
+                            What is a Huffman code?
+                        </h2>
+                        <p>
+                            At a high level, a Huffman code is a way of encoding data (in our case, using 1s and 0s) by reducing the length of a code associated with more frequently appearing characters, and having longer codes only for less common characters. This can be visualized as a tree of frequencies and characters.
+                        </p>
+
+                        <br>
+                        <br>
+                        <h2 style="font-weight: bold;">
+                            How is this tree formed?
+                        </h2>
+                        <p>
+                            Here is an example of a Huffman tree for the word "assassin":
+                        </p>
+                        <img src="assets/img/huffmantree.png">
+                        <p>
+                            Each non-leaf node contains the total frequency of the nodes below it, and each leaf contains a character, and its frequency. The path to each leaf <i>is</i> the code for the character, with the left "branch" representing a 0, and the right representing a 1. Notice how the path to more frequently-appearing characters is shorter, and vice versa; the code for <i>'a'</i> is just "1", while the code for <i>'n'</i> is "001". 
+                        </p>
+
+                        <br>
+                        <br>
+                        <h2 style="font-weight: bold;">
+                            Why is this better than the what a computer normally does?
+                        </h2>
+                        <p>
+                            In standard ASCII encoding, each character is encoded by <b>8 bits</b> which is equivalent to <b>1 byte</b>. Each bit is either a 0 or a 1, with a lowercase <i>a</i>, for example, being 97, or 01100001 in bits (binary). Therefore, in standard ASCII, the word "assassin" takes 64 bits of space. On the other hand, our Huffman code only takes 2 bits of space to encode an <i>a</i>, 1 bit to encode an <i>s</i>, and 3 bits each for <i>i</i> and <i>n</i>. Using the encoding we have devised, the number of bits needed to represent "assassin" is reduced to only 14.
+                        </p>
+                        <br>
+                        <p>
+                            In practice, this requires another file to actually store the encoding scheme, so that you can decode the file after it has been compressed. But, the size of that file can only be so large, bounded by the actual number of characters that ASCII can represent (256). So as you increase the size of the data you are compressing, the size of the decoder file increases more slowly, and only up to a certain point. This makes Huffman compression, to an extent, more useful as you increase the size of the file you are compressing.
+                        </p>
+                        <br>
+                        <a href="https://en.wikipedia.org/wiki/Huffman_coding">Read more about Huffman codes.</a>
+                    </div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Footer -->
+		<section class="section-4 has-text-centered container">
+			<a href="https://www.linkedin.com/in/jly02/">Contact Me</a>
+		</section>
+		
+		<!-- Scripts  -->
+		<script src="controller.js"></script>		
+	</body>	
+</html>
