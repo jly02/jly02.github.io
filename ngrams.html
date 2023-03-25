@@ -11,6 +11,8 @@
 	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
 	<meta name="author" content="Jonathan Ly">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 	<body>
 		<!-- Navbar -->
@@ -71,12 +73,12 @@
                         <br>
                         <p>
                             After that is done, we can predict words or generate sentences using somewhat random system. In order to guess, a word must be given a probability, defined with this expression:
+							\[\Pr(w_n|w_{prev}) = \frac{count(w_{prev} + w_n)}{count(w_{prev})}\]
                         </p>
-                        <img src="assets/img/pword.gif">
                         <p>
-                            Where w(n) is the word to be guessed, and w(prev) is, in my case, the previous two words, called the "context." Basically, the probability of seeing a certain word in given context is the number of times it shows up in that context, divided by the total number of times the context appeared. To make this more concrete, here is an example:
+                            Where \(w_n\) is the word to be guessed, and \(w_{prev}\) is, in my case, the previous two words, called the "context." Basically, the probability of seeing a certain word in given context is the number of times it shows up in that context, divided by the total number of times the context appeared. To make this more concrete, here is an example:
+							\[\Pr(\mathbf{w}~|~\text{and they}) = \frac{count(\text{and they}~\mathbf{w})}{count(\text{and they})}\]
                         </p>
-                        <img src="assets/img/pandthey.gif">
                         <p>
                             Once the possible words have been assigned a probability, you can use your choice of randomization methods to pick the next word. Continuing off of the previous example, let's say "and they" showed up 60 times, and the possible words to follow were "played", "sang", and "swam" with frequencies of 32, 16, and 12, respectively. The probability of seeing "and they played" would therefore be 32/60, or around 53%.
                         </p>
