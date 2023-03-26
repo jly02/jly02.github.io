@@ -56,8 +56,10 @@
                     <div class="project-desc">
 						<h3 class="title is-3">The Deduction Theorem</h3>
                         <p>
-                            If you've taken a proofs course, a logic course from your philosophy department, or had any introduction
-                            to symbolic logic, you may have seen an inference rule that looks something like this:
+							This article is aimed at those who already have some exposure to logic and mathematics, and is a
+							potential introduction to metalogic. If you've taken a proofs course, a logic course from your 
+							philosophy department, or had any introduction to symbolic logic, you may have seen an inference 
+							rule that looks something like this:
                             \[
                             \begin{aligned}
                             & \begin{aligned}
@@ -75,7 +77,46 @@
                             \end{aligned}
                             \end{aligned}
                             \]
+							Conditional proofs are an essential part of proof systems, and mathematics in general. It allows us to 
+							prove mathematical properties without yet knowing whether our assumption is actually true, and string
+							some of these proofs together in such a way that the proof of one assumption (conditional) potentially 
+							leads to the truth of several other statements.
                         </p>
+						<br>
+						<p>
+							The <a href="https://en.wikipedia.org/wiki/Conditional_proof">Wikipedia</a> page for conditional proof
+							gives one such example of this that computer scientists (or mathematicians) may recognize: the NP-complete
+							problems. By definition, any problem in NP (including other NP-complete problems) can be reduced to an
+							NP-complete problem. So, if it turns out that a polynomial-time solution exists for any one NP-complete
+							problem, then all other problems in NP can be solved in polynomial time as well. 
+						</p>
+						<br>
+						<p>
+							The page also briefly mentions the Riemann hypothesis, for which the truth of is used without proof in 
+							many practical applications, specifically cryptography—something about prime number distributions and 
+							prime factorings. I quite liked reading
+							<a href="https://www.uab.edu/inquiro/issues/past-issues/volume-9/the-unexpected-connection-between-internet-security-and-the-riemann-hypothesis">
+							this article
+							</a>
+							by the University of Alabama, as it makes a good introduction for anyone unfamiliar with the Riemann hypothesis
+							and its connections to security and cryptography.
+						</p>
+						<br>
+						<p>
+							Getting back to the main point of this article, we can then ask ourselves this: how do we know that 
+							conditional proof is actually a valid argument, even before considering its implications? Mathematics
+							is based on a specific first-order logic, but a philosopher may study different systems of
+							logic where conditional proof is <i>not</i> valid (such as <a href="https://en.wikipedia.org/wiki/Relevance_logic">relevanace logic</a>).
+							So how are we so sure that conditional proof is true in <i>our</i> system?
+						</p>
+						<br>
+						<p>
+							To answer this, we have to zoom out of doing proofs within our logical system, and instead, I've
+							basically asked how we can prove something about our logical system itself. So, I will continue from
+							here by first introducing some basic terminology and syntax for talking about a logic from a 
+							meta-theoretical perspective, and then going into how we can prove the validity of conditional proof,
+							also called the Deduction Theorem, for basic propositional logic.
+						</p>
                     </div>
 				</div>
 			</div>
