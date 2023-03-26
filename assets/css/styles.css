@@ -21,6 +21,9 @@ a:hover {
 section{
 	padding-top: 3rem;
 	padding-bottom: 3rem;
+}
+
+.article {
 	margin-left: 25%;
 	margin-right: 25%;
 }
