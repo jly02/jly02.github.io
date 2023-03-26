@@ -73,7 +73,7 @@
                         <br>
                         <p>
                             After that is done, we can predict words or generate sentences using somewhat random system. In order to guess, a word must be given a probability, defined with this expression:
-							\[\Pr(w_n|w_{prev}) = \frac{count(w_{prev} + w_n)}{count(w_{prev})}\]
+							\[\Pr(w_n~|~w_{prev}) = \frac{count(w_{prev} + w_n)}{count(w_{prev})}\]
                         </p>
                         <p>
                             Where \(w_n\) is the word to be guessed, and \(w_{prev}\) is, in my case, the previous two words, called the "context." Basically, the probability of seeing a certain word in given context is the number of times it shows up in that context, divided by the total number of times the context appeared. To make this more concrete, here is an example:
