@@ -34,9 +34,9 @@ section{
 	vertical-align: middle;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 840px) {
     .article {
-        width: 0;
+        width: 100%;
 		margin: 0;
     }
 } 
