@@ -34,11 +34,6 @@ section{
 	vertical-align: middle;
 }
 
-.MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
 @media screen and (max-width: 840px) {
     .article {
         width: 100%;
@@ -104,6 +99,7 @@ a.nav-item:hover {
 
 .project-desc {
 	text-align: justify;
+	overflow: auto;
 }
 
 .box {
