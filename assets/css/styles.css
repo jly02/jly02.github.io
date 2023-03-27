@@ -97,6 +97,15 @@ a.nav-item:hover {
 	text-align: justify;
 }
 
+li {
+	display: list-item;
+	list-style-position: inside;
+}
+
+ol {
+	margin-left: 10px;
+}
+
 .project-desc {
 	text-align: left;
 	overflow: auto;

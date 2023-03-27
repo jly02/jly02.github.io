@@ -280,12 +280,30 @@
 							At last, we have all the information and setup that we need to prove the deduction theorem for propositional
 							logic. So, using all the definitions introduced in the previous section, suppose \(\Gamma \cup \{A\} \vdash B\).
 							Our goal is to use this and our axiom schemas to show \(\Gamma \vdash A \to B\) by induction on proof length 
-							\(n\).
+							\(n \in \mathbb{N}\). That is, our property, \(P(n)\), is that \(\Gamma \cup \{A\} \vdash B\) implies 
+							\(\Gamma \vdash A \to B\) for proofs of length \(n\).
 						</p>
 						<br>
 						<p>
-							<b>Base Case</b>: When \(n = 1\), there are two possibilities.
+							<b>Base Case</b>: When proof length is \(n = 1\), \(B\) must be a member of \(\Gamma \cup \{A\}\). One possibility 
+							is that \(B=A\), so \(A \to B\) is the same as \(A \to A\), and this can be proven from Axiom 1 by substituting to get 
+							\(A \to (A \to A)\), and then using modus ponens to get \(A \to A\), so \(\Gamma \vdash A \to B\). The other is that 
+							\(B\) is a member of \(\Gamma\), so \(\Gamma \vdash B\), in which we again use substitution with Axiom 1, 
+							getting \(\Gamma \vdash B \to (A \to B)\), and then \(\Gamma \vdash A \to B\) by modus ponens.
 						</p>
+						<br>
+						<p>
+							<b>Inductive Step</b>: Now, suppose that \(\Gamma \cup \{A\} \vdash B\) implies \(\Gamma \vdash A \to B\) for all 
+							proofs of length \(k \in \mathbb{N}\) where \(1 \leq k \leq n\). This time, let \(\Gamma \cup \{A\} \vdash B\) in 
+							\(n + 1\) steps. Similar to before, there are two potential ways this came to be:
+						</p>
+						<ol>
+							<li>
+								\(B\) could still be a member of \(\Gamma \cup \{A\}\). In this case, we just do exactly as we did for the 
+								base case.
+							</li>
+							<li>or something else</li>
+						</ol>
 						<!-- Introduce the axioms, truth tables, prove the deduction theorem -->
 						<!-- Finish off with examples of proving things without the deduction theorem -->
                     </div>
