@@ -198,7 +198,8 @@
 							of proving that something holds over all natural numbers (\({0, 1, 2\dots}\)). It does this in two steps, 
 							called the base case and the inductive step. Suppose you have a property \(P\) that you want to prove
 							holds for all \(n \in \mathbb{N}\). Then, the base case is first proving \(P(0)\), and the inductive step 
-							is showing that \(P(k) \to P(k + 1)\) for an arbitrary \(k \in \mathbb{N}\). When written like a chain:
+							is showing that \(P(k) \to P(k + 1)\) for an arbitrary \(k \in \mathbb{N}\). During the inductive step,
+							\(P(k)\) is called the inductive hypothesis. When written like a chain:
 							\[P(0) \to P(1) \to P(2) \dots\]
 							we can intuitively see how this, with \(P(0)\), ends up proving \(P\) for all natural numbers. Here's an
 							elementary example: let \(P(n)\) be \(3~|~3n+3\), or \(3\) divides \(3n+3\). 
@@ -287,25 +288,39 @@
 						<p>
 							<b>Base Case</b>: When proof length is \(n = 1\), \(B\) must be a member of \(\Gamma \cup \{A\}\). One possibility 
 							is that \(B=A\), so \(A \to B\) is the same as \(A \to A\), and this can be proven from Axiom 1 by substituting to get 
-							\(A \to (A \to A)\), and then using modus ponens to get \(A \to A\), so \(\Gamma \vdash A \to B\). The other is that 
+							\(A \to (A \to A)\), and using modus ponens to get \(A \to A\), so \(\Gamma \vdash A \to B\). The other is that 
 							\(B\) is a member of \(\Gamma\), so \(\Gamma \vdash B\), in which we again use substitution with Axiom 1, 
 							getting \(\Gamma \vdash B \to (A \to B)\), and then \(\Gamma \vdash A \to B\) by modus ponens.
 						</p>
 						<br>
 						<p>
 							<b>Inductive Step</b>: Now, suppose that \(\Gamma \cup \{A\} \vdash B\) implies \(\Gamma \vdash A \to B\) for all 
-							proofs of length \(k \in \mathbb{N}\) where \(1 \leq k \leq n\). This time, let \(\Gamma \cup \{A\} \vdash B\) in 
-							\(n + 1\) steps. Similar to before, there are two potential ways this came to be:
+							proofs of length \(k \in \mathbb{N}\) where \(1 \leq k \leq n\). This is our inductive hypothesis. You may notice
+							this doesn't quite look like the induction that I showed before, but the idea is still the same. This time, 
+							let \(\Gamma \cup \{A\} \vdash B\) in \(n + 1\) steps. Similar to before, there are two potential ways this 
+							came to be:
 						</p>
 						<ol>
 							<li>
 								\(B\) could still be a member of \(\Gamma \cup \{A\}\). In this case, we just do exactly as we did for the 
-								base case.
+								base case. 
 							</li>
-							<li>or something else</li>
+							<li>
+								\(B\) is obtained by some application of modus ponens. This would imply the existence of some "intermediate"
+								formula \(C\) such that \(\Gamma \cup \{A\} \vdash C\) and \(\Gamma \cup \{A\} \vdash C \to B\). Since our proof of \(B\) is \(n + 1\)
+								steps, the proof of \(C\) and \(C \to B\) can each only be a maximum of \(n\) steps. Thus, by our inductive
+								hypothesis, \(\Gamma \vdash A \to C\) and \(\Gamma \vdash A \to (C \to B)\). By substitution on Axiom 2,
+								we get \(\Gamma \vdash (A \to (C \to B)) \to ((A \to C) \to (A \to B))\). Applying modus ponens, we get 
+								\(\Gamma \vdash (A \to C) \to (A \to B)\), and applying modus ponens again, we arrive at 
+								\(\Gamma \vdash A \to B\).
+							</li>
 						</ol>
-						<!-- Introduce the axioms, truth tables, prove the deduction theorem -->
-						<!-- Finish off with examples of proving things without the deduction theorem -->
+						<br>
+						<p>
+							Therefore, we get that \(\Gamma \vdash A \to B\) in every case for proofs of length \(n + 1\), and the deduction 
+							theorem is proven by induction.
+						</p>
+						<!-- Explain how I used strong induction instead of ordinary induction, begging the question, completeness -->
                     </div>
 				</div>
 			</div>
