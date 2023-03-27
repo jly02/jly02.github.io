@@ -193,7 +193,73 @@
                             Revisiting Fitch-style proofs, and mathematical induction.
                         </h2>
 						<p>
-							Firstly, it would be good to point out what specific properties of natural deduction will make 
+							If you've taken a proofs course, you should know what mathematical induction is, but for those who
+							do not (likely philosophers, or if you've only taken a logic course so far), induction is a method 
+							of proving that something holds over all natural numbers (\({0, 1, 2\dots}\)). It does this in two steps, 
+							called the base case and the inductive step. Suppose you have a property \(P\) that you want to prove
+							holds for all \(n \in \mathbb{N}\). Then, the base case is first proving \(P(0)\), and the inductive step 
+							is showing that \(P(k) \to P(k + 1)\) for an arbitrary \(k \in \mathbb{N}\). When written like a chain:
+							\[P(0) \to P(1) \to P(2) \dots\]
+							we can intuitively see how this, with \(P(0)\), ends up proving \(P\) for all natural numbers. Here's an
+							elementary example: let \(P(n)\) be \(3~|~3n+3\), or \(3\) divides \(3n+3\). 
+						</p>
+						<br>
+						<p>
+							<b>Base Case</b>: \(P(0)\) is true, because \(3\) divides \(3\).
+						</p>
+						<br>
+						<p>
+							<b>Inductive Step</b>: Suppose \(P(k)\) is true for an arbitrary \(k \in \mathbb{N}\). We won't actually
+							have to use the inductive step in this case, and instead we just use algebra to get the following:
+							\[
+							\begin{aligned}
+							3(k+1) + 3 &= 3(k + 1 + 1) \\
+								&= 3(k + 2)
+							\end{aligned}
+							\]
+							and so, by definition, \(3\) divides \(3(k+1) + 3\). Therefore, we can conclude that \(3~|~3n+3\) for all 
+							\(n \in \mathbb{N}\) by induction, and the proof is complete. 
+						</p>
+						<br>
+						<p>
+							Finally, we can take a look at how this can be applied to our natural deduction proofs. Let's say we want
+							to show that a property holds for all proofs (in our case, we want to show conditional proof is valid for 
+							an arbitrary proof). Have a look at how we enumerate a length \(n\) Fitch-style proof:
+							\[
+							\begin{aligned}
+							& \begin{aligned}
+							1.\quad& \Gamma \\
+							\dots\quad& \dots \\ 
+							n.\quad& \gamma
+							\end{aligned} & \qquad & \begin{aligned}
+							& \text{Premises} \\
+							& \dots \\
+							& \text{Some Rule: 1$\dots n-1$}
+							\end{aligned}
+							\end{aligned}
+							\]
+							And take note that the numbering used for each line of proof. Perhaps that will give you a good idea of
+							how to prove something over arbitrary proofs—we do induction on proofs of arbitrary length \(n\).
+						</p>
+						<br><br>
+						<h2 style="font-weight: bold; font-size: large">
+                            The Deduction Theorem, formally.
+                        </h2>
+						<p>
+							Before we get to actually proving the deduction theorem for propositional logic, we will do some setup 
+							by way of defining terms, introducing useful axioms of propositional logic, and formalizing a statement
+							of the deduction theorem in the meta-language. Firstly, these are some particular axioms that will make
+							proving the deduction theorem a bit easier for us:
+							\[\text{Axiom 1: } \alpha \to (\beta \to \alpha)\]
+						</p>
+						<br>
+						<p>
+							I (sort of) lied in the informal deduction theorem section. The full deduction theorem is actually stronger 
+							than what I said at that time, and can be applied to <i>any</i> set of sentences. Like before, we will use 
+							\(\Gamma\) to be an arbitrary theory, or set of sentences/formulas. Then, we will also let \(A\) and \(B\) 
+							be formulas. We will use the set union operator, \(\cup\), which is used to "put together" two sets, and
+							\(\{A\}\) is the set containing \(A\). The full statement of the deduction theorem is 
+							\(\Gamma \cup \{A\} \vdash B\) implies \(\Gamma \vdash A \to B\). 
 						</p>
 						<!-- Introduce the axioms, truth tables, prove the deduction theorem -->
 						<!-- Finish off with examples of proving things without the deduction theorem -->
