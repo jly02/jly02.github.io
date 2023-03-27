@@ -248,18 +248,43 @@
 						<p>
 							Before we get to actually proving the deduction theorem for propositional logic, we will do some setup 
 							by way of defining terms, introducing useful axioms of propositional logic, and formalizing a statement
-							of the deduction theorem in the meta-language. Firstly, these are some particular axioms that will make
-							proving the deduction theorem a bit easier for us:
-							\[\text{Axiom 1: } \alpha \to (\beta \to \alpha)\]
+							of the deduction theorem in the meta-language. Firstly, these are some particular axiom schemas (patterns) 
+							that will make proving the deduction theorem as easy as possible for us:
+							\[
+							\begin{aligned}
+								\text{Axiom 1: }& \alpha \to (\beta \to \alpha) \\[0.7em]
+								\text{Axiom 2: }& (\alpha \to (\beta \to \gamma)) \to ((\alpha \to \beta) \to (\alpha \to \gamma)) \\[0.7em]
+								\text{Modus Ponens: }& \text{from $\alpha$ and $\alpha \to \beta$, infer $\beta$}
+							\end{aligned}
+							\]
+							Where \(\alpha\), \(\beta\), and \(\gamma\) are formulas, and substitution can be applied as long as the schema,
+							matches. Although we don't prove axioms, these can be confirmed as tautologous simply by building 
+							their truth tables. We can also somewhat intuit their meanings by saying them in plain English. For axiom 1, 
+							if \(A\), then anything implies \(A\). For axiom 2, if \(A\) implies that \(B\) implies \(C\), then if
+							\(A\) implies \(B\), \(A\) implies \(C\).
 						</p>
 						<br>
 						<p>
-							I (sort of) lied in the informal deduction theorem section. The full deduction theorem is actually stronger 
-							than what I said at that time, and can be applied to <i>any</i> set of sentences. Like before, we will use 
-							\(\Gamma\) to be an arbitrary theory, or set of sentences/formulas. Then, we will also let \(A\) and \(B\) 
-							be formulas. We will use the set union operator, \(\cup\), which is used to "put together" two sets, and
-							\(\{A\}\) is the set containing \(A\). The full statement of the deduction theorem is 
-							\(\Gamma \cup \{A\} \vdash B\) implies \(\Gamma \vdash A \to B\). 
+							Now, the deduction theorem, again. I (sort of) lied in the first section about the deduction theorem. The full 
+							deduction theorem is actually stronger than what I said at that time, and can be applied to <i>any</i> set 
+							of sentences. Like before, we will use \(\Gamma\) to be an arbitrary theory, or set of sentences/formulas. 
+							Then, we will also let \(A\) and \(B\) be formulas. We will use the set union operator, \(\cup\), which 
+							is used to "put together" two sets, and \(\{A\}\) is the set containing \(A\). The full statement of the 
+							deduction theorem is \(\Gamma \cup \{A\} \vdash B\) implies \(\Gamma \vdash A \to B\). 
+						</p>
+						<br><br>
+						<h2 style="font-weight: bold; font-size: large">
+                            (Finally) Proving the theorem.
+                        </h2>
+						<p>
+							At last, we have all the information and setup that we need to prove the deduction theorem for propositional
+							logic. So, using all the definitions introduced in the previous section, suppose \(\Gamma \cup \{A\} \vdash B\).
+							Our goal is to use this and our axiom schemas to show \(\Gamma \vdash A \to B\) by induction on proof length 
+							\(n\).
+						</p>
+						<br>
+						<p>
+							<b>Base Case</b>: When \(n = 1\), there are two possibilities.
 						</p>
 						<!-- Introduce the axioms, truth tables, prove the deduction theorem -->
 						<!-- Finish off with examples of proving things without the deduction theorem -->
