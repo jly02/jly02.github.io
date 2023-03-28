@@ -296,8 +296,7 @@
 						<br>
 						<p>
 							<b>Inductive Step</b>: Now, suppose that \(\Gamma \cup \{A\} \vdash B\) implies \(\Gamma \vdash A \to B\) for all 
-							proofs of length \(k \in \mathbb{N}\) where \(1 \leq k \leq n\). This is our inductive hypothesis. You may notice
-							this doesn't quite look like the induction that I showed before, but the idea is still the same. This time, 
+							proofs of length \(k \in \mathbb{N}\) where \(1 \leq k \leq n\). This is our inductive hypothesis. This time, 
 							let \(\Gamma \cup \{A\} \vdash B\) in \(n + 1\) steps. Similar to before, there are two potential ways this 
 							came to be:
 						</p>
@@ -320,6 +319,42 @@
 						<p>
 							Therefore, we get that \(\Gamma \vdash A \to B\) in every case for proofs of length \(n + 1\), and the deduction 
 							theorem is proven by induction.
+						</p>
+						<br><br>
+						<h2 style="font-weight: bold; font-size: large">
+                            Addendum
+                        </h2>
+						<p>
+							<b><i>Starting at 1:</i></b> Whether or not 0 is a natural number is actually a point of
+							dispute for some. I, personally, would argue that 0 is, in fact, a natural number. However, the proof 
+							I showed started at 1. This is simply for the fact that a proof cannot be of length 0. So since we are doing 
+							induction on the length of the proof, it makes sense for 
+							the base case to be \(n = 1\) instead of \(n = 0\). We could actually amend the proof very slightly to
+							instead say that \(n\) is the number of lines of the proof <i>after</i> \(\Gamma\). If that were 
+							the case, we would use \(n=0\) as the base case, but nothing else changes.
+						</p>
+						<br>
+						<p>
+							<b><i>Induction:</i></b> You may have noticed that the induction used in the proof doesn't quite look like the induction 
+							that I showed prior to it, but the idea is still the same. Formally, the induction I first showed uses the following 
+							argument (the bar and three dots mean "therefore"):
+							\[\frac{P(0), \forall k \in \mathbb{N} (P(k) \to P(k + 1))}{\therefore \forall n \in \mathbb{N}(P(n))}\] 
+							Whereas the argument used in the proof goes like this:
+							\[\frac{P(0), \forall k \in \mathbb{N} (\forall j \in \mathbb{N}(0 \leq j \leq k \to P(j)) \to P(k + 1))}{\therefore \forall n \in \mathbb{N}(P(n))}\] 
+							Or, in English, given the base case \(P(0)\) and that \(P\) holds for all values between \(0\) and an arbitrary \(k\),
+							if we can show that \(P(k+1)\) holds, then we have proven \(P\) for all natural numbers by induction. This is called 
+							<i>strong induction</i>, whereas the first version that I showed is called <i>ordinary induction</i>. The difference it
+							makes in the actual proof is simple. In ordinary induction, we assume \(P(k)\) for some arbitrary \(k\). In strong 
+							induction, we assume \(P(j)\) for all \(j\) between (inclusive) \(0\) and \(k\).
+						</p>
+						<br>
+						<p>
+							<b><i>Why \(\Gamma \cup \{A\}\)? </i></b> Initially, we are only starting with the set of sentences \(\Gamma\) as premises,
+							or givens. When you begin a conditional proof, you make an assumption, say \(A\), and that assumption is <i>added</i> to the 
+							set of premises, for the duration of the subproof. After the conditional proof is complete, that is, we have arrived at some
+							conclusion \(B\), we must <i>discharge</i> the assumption \(A\), and can no longer use it. But what can we then do with the 
+							subproof that we have completed? As already well known, we infer \(A \to B\), and that is what the deduction theorem seeks to
+							justify. 
 						</p>
 						<!-- Explain how I used strong induction instead of ordinary induction, begging the question, completeness -->
 					</div>
