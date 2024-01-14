@@ -134,7 +134,7 @@
                             written right next to each other, but then we lose information about the address each symbol is stored at. Thus,
                             instead of simply encoding the symbol, we can write it as a tuple \((i, \sigma)\) for some \(i \in \mathbb{N}\) and
                             some symbol \(\sigma\). Our encoding scheme may simply start with the address, written in binary, some delimiter, 
-                            say |, and the symbol itself, resulting in each entry being of the form \([i]|\sigma\). The delimiter prevents
+                            say |, and the symbol itself, resulting in each entry being of the form \(\lfloor i \rfloor |\sigma\). The delimiter prevents
                             certain ambiguous cases, such as \(100101\), which could be interpreted in a variety of ways, such as the tuple 
                             \((10010, 1)\), or as two tuples, \((100,1)\) and \((0, 1)\).
                         </p>
