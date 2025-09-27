@@ -1,0 +1,12 @@
+---
+layout: archive
+title: "Resume"
+permalink: /resume/
+author_profile: true
+redirect_from:
+  - /resume
+---
+
+{% include base_path %}
+
+<iframe width="100%" height="800" src="../files/Jonathan_Ly_resume.pdf"> <iframe width="100%" height="800" src="../files/Jonathan_Ly_resume.pdf"> 
