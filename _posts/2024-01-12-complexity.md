@@ -15,4 +15,6 @@ That all being said, I hadn't thought much of the assigned exercise when I first
 
 Using the key idea from the second paragraph, you would see that we might want to show this by constructing a TM that can simulate a RAM access operation. And this is where the trouble begins. My first thought was to simply designate a working tape on a normal TM to be a "RAM tape," as we will use it to simulate our RAM. Non-RAM operations are trivially exactly the same as a normal TM, so we want to focus on the case that we do a RAM operation. One way to do this (also the first way I thought to do it) is to simply directly move to the \(i^{th}\) cell on the RAM tape, and perform the read or write as specified. After all, there can only be at most \(T(n)\) many elements written to RAM in any given execution. So, in the worst case, you would have to sweep over \(O(T(n))\) elements to perform a RAM operation. Thus, the overall runtime is \(O(T(n)^2)\), satisfying the \(O(T(n)^3)\) criteria. 
 
-![wrong ram tape](https://raw.githubusercontent.com/jly02/jly02.github.io/refs/heads/master/images/ramtapewrong.png)
+<div style="text-align: center;">
+  ![wrong ram tape](https://raw.githubusercontent.com/jly02/jly02.github.io/refs/heads/master/images/ramtapewrong.png)
+</div>
