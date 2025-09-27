@@ -1,11 +1,10 @@
 ---
-title: 'Blog Post number 4'
-date: 2015-08-14
-permalink: /posts/2012/08/blog-post-4/
+title: 'Complexity Analysis and a Lesson in Hidden Assumptions'
+date: 2024-01-12
+permalink: /posts/2024/01/complexity/
 tags:
-  - cool posts
-  - category1
-  - category2
+  - logic
+  - complexity
 ---
 
 This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
