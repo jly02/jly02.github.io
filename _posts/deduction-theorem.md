@@ -1,0 +1,32 @@
+---
+title: 'The Deduction Theorem'
+date: 2023-03-27
+permalink: /posts/dt
+tags:
+  - logic
+  - metalogic
+---
+
+If you've taken a proofs course, a logic course from your philosophy department, or had any 
+introduction to symbolic logic, you may have seen an inference rule that looks something like this:
+\[
+\begin{aligned}
+& \begin{aligned}
+& \begin{aligned}
+1.\quad& A \\
+?.\quad& \dots \\
+n-1.\quad& B
+\end{aligned} \\
+n.\quad& A \to B
+\end{aligned} & \qquad & \begin{aligned}
+& \text{Assumption} \\
+& \text{???} \\
+& \text{Some Rule: 1...$n-1$} \\
+& \qquad \text{Conditional Proof}
+\end{aligned}
+\end{aligned}
+\]
+Conditional proofs are an essential part of proof systems, and mathematics in general. It allows us to 
+prove mathematical properties without yet knowing whether our assumption is actually true, and string
+some of these proofs together in such a way that the proof of one assumption (conditional) potentially 
+leads to the truth of several other statements.
