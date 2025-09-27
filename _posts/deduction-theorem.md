@@ -1,7 +1,7 @@
 ---
 title: 'The Deduction Theorem'
 date: 2023-03-27
-permalink: /posts/dt
+permalink: /posts/2023/03/dt
 tags:
   - logic
   - metalogic
