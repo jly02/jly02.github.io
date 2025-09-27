@@ -7,13 +7,12 @@ tags:
   - complexity
 ---
 
-This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
+I've recently begun taking a course in complexity theory. Even though I've studied the topic a little bit in the past, sitting through a formal treatment of the subject has already given me a lot of clarity on little informal notions I had before, such as the general model of Turing machines, and the idea of a universal interpreter. This article intends to recount one of the experiences I had with an exercise from a book, which was slightly modified by my professor and assigned as homework.
 
-Headings are cool
-======
+In this course, my professor decided to (loosely) reference the book *Computational Complexity: A Modern Approach* by Arora and Barak. Arora and Barak decide to use multi-tape Turing machines (TM), whereas some other books, such as Sipser's *Introduction to the Theory of Computation*, use only a single combined input/output/working tape. Interestingly, if \(n\) is the size of our input, it can be shown that any function computable by a multi-tape TM in \(T(n)\) time (for some function \(T\) with certain restrictions) can also be computed by a single-tape TM in \(O(T(n)^2)\) time. The key idea here is we "simulate" multiple tapes by simply condensing the items on each tape into one tape. Each cell is then a pair that first contains  a list of all symbols that would've been on the multiple tapes, and then a list indicating whether the head of the "simulated" tape is pointing at it or not. A single iteration of the multi-tape machine can be simulated by sweeping across the entire written portion of our single-tape machine, resulting in \(O(T(n)^2)\) runtime.
 
-You can have many headings
-======
+That all being said, I hadn't thought much of the assigned exercise when I first glanced at it. It goes roughly like this: say we have a Turing machine with an infinite array \(A\) that can be accessed in constant time. We let one of the working-tapes be denoted as an "address tape," and when we enter the access state, we will have an address written, denoted by \(\lfloor i \rfloor\) as the binary encoding of some non-negative integer \(i\), a symbol R or W (for Read and Write) immediately following, and then some symbol \(\sigma\) if it is a W. If it is an R, we will simply take the symbol at \(A[i]\) and put it to the right of the R, and if it is a W, we take \(\sigma\) and place it at \(A[i]\). Call this a Random-Access-Memory Turing machine (RAM TM). We want to show that any function computable by a RAM TM in time \(T(n)\) can also be computed by a "normal" TM in time \(O(T(n)^3)\).
 
-Aren't headings cool?
-------
+Using the key idea from the second paragraph, you would see that we might want to show this by constructing a TM that can simulate a RAM access operation. And this is where the trouble begins. My first thought was to simply designate a working tape on a normal TM to be a "RAM tape," as we will use it to simulate our RAM. Non-RAM operations are trivially exactly the same as a normal TM, so we want to focus on the case that we do a RAM operation. One way to do this (also the first way I thought to do it) is to simply directly move to the \(i^{th}\) cell on the RAM tape, and perform the read or write as specified. After all, there can only be at most \(T(n)\) many elements written to RAM in any given execution. So, in the worst case, you would have to sweep over \(O(T(n))\) elements to perform a RAM operation. Thus, the overall runtime is \(O(T(n)^2)\), satisfying the \(O(T(n)^3)\) criteria. 
+
+![wrong ram tape]()
